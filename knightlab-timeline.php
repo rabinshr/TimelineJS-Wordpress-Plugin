@@ -117,8 +117,9 @@ function kl_timeline_tinymce() {
             var maptype = jQuery('#timeline_maptype').val();
             var lang = jQuery('#timeline_lang').val();
             var font = jQuery('#timeline_font').val();
+            var theme = jQuery('#timeline_theme').val();
 
-            window.send_to_editor("[timeline src=\"" + data_src + "\" width=\"" + width + "\" height=\"" + height + "\" font=\"" + font + "\" maptype=\"" + maptype + "\" lang=\"" + lang + "\" ]");
+            window.send_to_editor("[timeline src=\"" + data_src + "\" width=\"" + width + "\" height=\"" + height + "\" font=\"" + font + "\" maptype=\"" + maptype + "\" lang=\"" + lang + "\" theme=\"" + theme + "\" ]");
         }
     </script>
 
@@ -250,6 +251,15 @@ function kl_timeline_tinymce() {
                                         <option value="th">Thai</option>
                                         <option value="tr">Turkish</option>
                                         <option value="uk">Ukrainian</option>
+                                    </select><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" style="padding: 0 15px 5px 0;"><label for="timeline_theme"><?php _e('Theme', 'kl-timeline'); ?></label></td>
+                                <td style="padding: 0 0 10px;">
+                                    <select id="timeline_theme">
+                                        <option value="">Classic</option>
+                                        <option value="dark">Dark</option>
                                     </select><br/>
                                 </td>
                             </tr>
