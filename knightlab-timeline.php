@@ -46,6 +46,7 @@ function kl_timeline_shortcode($atts, $content=null) {
             'debug' => 'false',
             'start_at_slide' => null,
             'start_zoom_adjust' => null,
+            'theme' => null,
                 ), $atts
         ));
 
@@ -53,7 +54,11 @@ function kl_timeline_shortcode($atts, $content=null) {
 
         wp_enqueue_script('kl-timeline-embed');
         $js_path = plugin_dir_url( __FILE__).'js/timeline-min.js';
-        $css_path = plugin_dir_url( __FILE__).'css/timeline.css';
+        if ($theme) {
+            $css_path = plugin_dir_url( __FILE__).'css/themes/'.$theme.'.css';
+        } else {
+            $css_path = plugin_dir_url( __FILE__).'css/timeline.css';
+        }
 
         $shortcode = '
     <div id="timeline-embed"></div>
